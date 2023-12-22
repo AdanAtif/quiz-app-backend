@@ -24,6 +24,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(cors({
+  origin: "https://adan-quiz-app.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+}));
 
 app.use("/auth", authRoutes);
 app.use("/quiz", quizRoutes);
