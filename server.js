@@ -8,16 +8,7 @@ const quizRoutes = require("./src/routes/quizRoutes.js");
 const questionRoutes = require("./src/routes/questionRoutes.js");
 const userRoutes = require("./src/routes/userRoutes.js")
 
-// app.use(cors());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
-// app.use(
-//   cors({
-//     origin: "https://adan-quiz-app.vercel.app",
-//   })
-// );
+
 app.use(cors());
 
 app.use(bodyParser.json());
