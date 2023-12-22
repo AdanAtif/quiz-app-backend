@@ -116,7 +116,8 @@ const login = async (req, res) => {
         console.log("---------------------------");
         return res.send({
             "status": "Failed",
-            "message": "Something went wrong please try again1"
+            "res":error,
+            "message": "Something went wrong please try again 12"
         })
     }
 };
