@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://adan-quiz-app.vercel.app",
   })
 );
 
