@@ -139,9 +139,10 @@ const updateQuestion = async (req, res) => {
             OptionOne,
             OptionTwo,
             OptionThree,
-            question
+            question,
+            QuizId
         } = req.body
-        if (!correctOption || !OptionOne || !OptionTwo || !OptionThree || !id || !question) {
+        if (!correctOption || !OptionOne || !OptionTwo || !OptionThree || !id || !question ||!QuizId) {
             return res.send({
                 "status": "Failed",
                 "message": "please fill all fields"
@@ -166,7 +167,11 @@ const updateQuestion = async (req, res) => {
                 OptionThree: OptionThree,
             }
         })
-        const questions = await prismadb.question.findMany()
+        const questions = await prismadb.question.findMany({
+            where:{
+                quizId:QuizId
+            }
+        })
         return res.status(200).send({
             "status": "success",
             "question": questions,
