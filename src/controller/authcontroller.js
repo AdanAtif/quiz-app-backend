@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const prismadb = require("../config/db.js")
+const prismadb = require("../config/db.js");
 
 const Signup = async (req, res) => {
     const {
@@ -89,7 +89,7 @@ const login = async (req, res) => {
         if (!user) {
             return res.send({
                 status: "Failed",
-                message: "Email is not registoredq"
+                message: "Email is not registored"
             })
         }
         const isMatch = await bcrypt.compare(password, user.password)
